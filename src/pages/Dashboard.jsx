@@ -364,9 +364,9 @@ const Dashboard = ({ isAdminPage = false }) => {
       </div>
       <div className="flex-1 overflow-auto mb-2 w-[330px]  ">
         {messages.map((msg) => (
-          <div key={msg._id || Math.random()} className={`p-2 my-1 rounded max-w-xs ${getAlignment(msg.sender)}`}>
+          <div key={msg._id || Math.random()} className={` p-2 my-1 rounded max-w-xs ${getAlignment(msg.sender)}`}>
             {/* <strong>{msg.sender === "0080" ? "User" : "admin"}:</strong>*/} <strong className="font-[600] text-gray-800 text-lg max-w-[330px] break-words overflow-auto ">{msg.content}</strong>  
-            {msg.image && <img src={`https://backendchat-877x.onrender.com${msg.image}`} className="max-w-xs mt-1" />}
+            {msg.image && <div className=" h-auto overflow-hidden"> <img src={`https://backendchat-877x.onrender.com${msg.image}`} className="w-full h-full object-cover" /> </div>}
             {msg.video && <video controls src={`https://backendchat-877x.onrender.com${msg.video}`} className="max-w-xs mt-1" />}
             {msg.voice && <audio controls src={`https://backendchat-877x.onrender.com${msg.voice}`} className="mt-1  w-[245px] " />}
           </div>
