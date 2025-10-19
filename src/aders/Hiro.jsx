@@ -3,7 +3,7 @@ import React from 'react'
 function Hiro() {
     return (
         <>
-            <section className='flex justify-between  flex-col-reverse md:flex-row py-24'>
+            <section className='flex justify-between  flex-col-reverse md:flex-row py-40'>
                 <div className='flex justify-center items-center md:items-start gap-12 md:justify-between flex-col-reverse md:flex-row w-full md:px-24'>
 
                     <div className=''>

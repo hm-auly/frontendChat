@@ -2,53 +2,53 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 function Navber() {
-  // const [activ1, setActiv1] = useState(true)
-  // const [activ2, setActiv2] = useState(false)
-  // const [activ3, setActiv3] = useState(false)
-  // const [activ4, setActiv4] = useState(false)
-  // const ActivLink1 = ()=>{
-  //   setActiv1(true)
-  //   setActiv2(false)
-  //   setActiv3(false)
-  //   setActiv4(false)
-  // }
-  // const ActivLink2 = ()=>{
-  //   setActiv2(true)
-  //   setActiv1(false)
-  //   setActiv3(false)
-  //   setActiv4(false)
+  const [activ1, setActiv1] = useState(true)
+  const [activ2, setActiv2] = useState(false)
+  const [activ3, setActiv3] = useState(false)
+  const [activ4, setActiv4] = useState(false)
+  const ActivLink1 = ()=>{
+    setActiv1(true)
+    setActiv2(false)
+    setActiv3(false)
+    setActiv4(false)
+  }
+  const ActivLink2 = ()=>{
+    setActiv2(true)
+    setActiv1(false)
+    setActiv3(false)
+    setActiv4(false)
 
-  // }
-  // const ActivLink3 = ()=>{
-  //   setActiv3(true)
-  //   setActiv1(false)
-  //   setActiv2(false)
-  //   setActiv4(false)
-  // }
-  // const ActivLink4 = ()=>{
-  //   // setActiv4(true)
-  //   // setActiv1(false)
-  //   // setActiv2(false)
-  //   // setActiv3(false)
-  // }
-  // const NabInfo = [
-  //   {
-  //     navT: "Home",
-  //     navL: "Home"
-  //   },
-  //   {
-  //     navT: "About",
-  //     navL: "About",
-  //   },
-  //   {
-  //     navT: "Contact",
-  //     navL: "Contact"
-  //   },
-  //   {
-  //     navT: "Message",
-  //     navL: "Contact"
-  //   },
-  // ]
+  }
+  const ActivLink3 = ()=>{
+    setActiv3(true)
+    setActiv1(false)
+    setActiv2(false)
+    setActiv4(false)
+  }
+  const ActivLink4 = ()=>{
+    // setActiv4(true)
+    // setActiv1(false)
+    // setActiv2(false)
+    // setActiv3(false)
+  }
+  const NabInfo = [
+    {
+      navT: "Home",
+      navL: "Home"
+    },
+    {
+      navT: "About",
+      navL: "About",
+    },
+    {
+      navT: "Contact",
+      navL: "Contact"
+    },
+    {
+      navT: "Message",
+      navL: "Contact"
+    },
+  ]
   return (
    <section className=''>
      <section className='  md:shadow-custom P-0  duration-300 md:h-[60px] flex flex-col justify-center md:my-5 md:rounded-full backdrop-blur-md py-5 md:py-10 bg-transparent shadow-2xl '>
@@ -67,8 +67,8 @@ function Navber() {
    </div>
   </div>
  
-  <div className='flex  md:gap-16 justify-between md:justify-end items-center w-full '>
-    <div className={`NavLinkStyle `} >
+  <div className='flex pt-4  md:gap-16 justify-between md:justify-end items-center w-full '>
+    <div className={`NavLinkStyle hover:bg-amber-600 `} >
       <i className="fa-solid fa-house text-xl  "></i>
       <Link to="/" >Home</Link>
     </div>

@@ -20,7 +20,7 @@ function HomePage() {
     <div  >
       
       {/* <div className='px-5 fixed  w-full  z-50 '> */}
-      <div className='px-5 w-full z-50'>
+      <div className='px-5 w-full fixed md:relative  z-50'>
         <Navber />
       </div>
       {/* </div> */}
