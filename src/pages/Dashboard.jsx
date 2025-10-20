@@ -247,7 +247,10 @@ import Navber from "../aders/Navber";
 const socket = io(`https://backendchat-877x.onrender.com`);
 
 const Dashboard = ({ isAdminPage = false }) => {
+  const [activ, setActiv] = useState(false);
   const [messages, setMessages] = useState([]);
+  const [text1, setText1] = useState("");
+  const textareaRef = useRef(null);
   const [role, setRole] = useState("");
   const [text, setText] = useState("");
   const [file, setFile] = useState(null);
@@ -256,6 +259,17 @@ const Dashboard = ({ isAdminPage = false }) => {
   const audioChunksRef = useRef([]);
   const messagesEndRef = useRef(null);
 
+  //
+   useEffect(() => {
+    const textarea = textareaRef.current;
+    if (textarea) {
+      textarea.style.height = "auto"; // আগে reset করি
+      textarea.style.height = `${Math.min(textarea.scrollHeight, 200)}px`; 
+      // 200px হলো max height, এটা চাওয়া অনুযায়ী পরিবর্তন করা যাবে
+    }
+  }, [text]);
+
+  //
   // Fetch messages
   useEffect(() => {
     const fetchMessages = async () => {
@@ -356,6 +370,21 @@ const Dashboard = ({ isAdminPage = false }) => {
     else return msgSender === "0080" ? "self-end bg-blue-200 mr-14 " : "self-start bg-gray-200 ml-14 my-2";
   };
 
+  //
+
+    const handleFileChange = (e) => {
+    const selectedFile = e.target.files[0];
+    if (selectedFile ) {
+      setFile(selectedFile);
+    } else {
+      setFile(null);
+    }
+  };
+
+  
+
+  //
+
   return (
   
     <div className="flex flex-col h-screen p-4  ">
@@ -375,45 +404,75 @@ const Dashboard = ({ isAdminPage = false }) => {
       </div>
 
        {/* Input + File + Voice */}
-      <form onSubmit={sendMessage} className="flex gap-2 items-center">
-        <textarea
+      <form onSubmit={sendMessage} className="flex gap-2 items-end  w-[330px] ">
+        <div className="flex justify-between items-end bg-gray-700 text-gray-200 font-[500] overflow-auto rounded-md w-full "> 
+ <textarea
           type="text"
+          onFocus={() => setActiv(true)}
+          onBlur={() => setActiv(false)}
+          ref={textareaRef}
           value={text}
           onChange={(e) => setText(e.target.value)}
-          placeholder="Type message..."
-          className="border p-2 flex-1 rounded h-[70px]"
+          placeholder={file ? `${file.name}`: 'your message typing...'}
+          //disabled={!file && !text}
+          className="border border-none w-full px-2  outline-none resize-none overflow-auto"
         />
-        <label htmlFor="fileUpload" className="bg-blue-500 text-white p-2 rounded">
+        <label htmlFor="fileUpload" className="  p-2 rounded  ">
           <MdFilePresent  className="text-2xl"/>
         </label>
-        <input id="fileUpload" type="file" className="hidden" onChange={(e) => setFile(e.target.files[0])} />
+        </div>
+       
+        {/* <input id="fileUpload" type="file" className="hidden" onChange={(e) => setFile(e.target.files[0]) /> */}
+        {/* <input type="file"  id="fileUpload"  className="hidden" onChange={(e) => setFile(e.target.files[0])} /> */}
+
+                <input type="file"  id="fileUpload"  className="hidden" onChange={handleFileChange} />
+
         
+          <div>
+     {activ === false &&  file === null && text === "" ? <div> 
+         {recording ? (
+          <button type="button" onClick={stopRecording} className="bg-blue-500 text-white p-2 rounded-full h-[45px] w-[45px] flex justify-center items-center  ">
          
-        {recording ? (
-          <button type="button" onClick={stopRecording} className="bg-blue-500 text-white p-2 rounded">
-           
-              <IoMdSend className="text-2xl" />
+              <IoMdSend className="text-4xl" />
            
           </button>
-        ) : (
+        ) : ( 
 
-          <button type="button" onClick={startRecording} className="bg-blue-500 text-white p-2 rounded">
-                
-          <i className="fa-solid fa-microphone"></i>
-                 
+          <button type="button" onClick={startRecording} className="bg-blue-500 text-white p-2  rounded-full text-2xl">
+          <i className="fa-solid fa-microphone "></i>
           </button>
-        )} 
+        )} </div>: <div className="flex items-end"> 
+         <button type="submit" onSubmit={sendMessage} className="bg-blue-500 text-white pl-1 rounded-full h-[45px] w-[45px]  flex items-center justify-center " >
+           <IoMdSend className="text-3xl" />
+        </button>  </div>
+    }
+          </div>
+            
 
-
-
- 
-         <button type="submit" className="bg-blue-500 text-white p-2 rounded" >
-           <IoMdSend className="text-2xl" />
-        </button>   
-      </form>
+       </form> 
 
     </div>
   );
 };
 
 export default Dashboard;
+
+
+
+/*         {recording ? (
+        //   <button type="button" onClick={stopRecording} className="bg-blue-500 text-white p-2 rounded">
+         
+        //       <IoMdSend className="text-2xl" />
+           
+        //   </button>
+        // ) : (  
+
+        //   <button type="button" onClick={startRecording} className="bg-blue-500 text-white p-2 rounded">
+        //   <i className="fa-solid fa-microphone"></i>
+        //   </button>
+        // )} 
+
+        
+        //  <button type="submit" onSubmit={sendMessage} className="bg-blue-500 text-white p-2 rounded" >
+        //    <IoMdSend className="text-2xl" />
+        // </button>    */
