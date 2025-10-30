@@ -242,7 +242,8 @@ import axios from "axios";
 import { IoMdSend } from "react-icons/io";
 import { MdKeyboardVoice } from "react-icons/md";
 import { MdFilePresent } from "react-icons/md";
-import Navber from "../aders/Navber";
+import { Link } from 'react-router-dom'
+import { FaArrowLeftLong } from "react-icons/fa6";
 
 const socket = io(`https://backendchat-877x.onrender.com`);
 
@@ -387,9 +388,22 @@ const Dashboard = ({ isAdminPage = false }) => {
 
   return (
   
-    <div className="flex flex-col h-screen p-4  ">
-      <div>
-        <Navber />
+    <div className="flex flex-col h-screen px-2  ">
+      <div className="flex  h-[] pt-2 pl-2 ">
+        {/* <Navber /> */}
+        <div className="font-bold pt-3">
+         <Link to="/" ><FaArrowLeftLong className="flex" /></Link>
+        </div>
+        <div className="h-14 ">
+            <div className=" px-5">
+              <div>
+              <p className="">শাহজাদী</p>
+              </div>
+              {activ === false &&  file === null && text === "" ? 
+              <p></p> : <p className="text-xs">Typing...</p>
+}
+            </div>
+        </div>
       </div>
       <div className="flex-1 overflow-auto mb-2 w-[330px]  ">
         {messages.map((msg) => (
