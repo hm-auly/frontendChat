@@ -388,8 +388,8 @@ const Dashboard = ({ isAdminPage = false }) => {
 
   return (
   
-    <div className="flex flex-col h-screen px-2  ">
-      <div className="flex  h-[] pt-2 pl-2 ">
+    <div className="flex flex-col w-screen h-screen overflow-hidden bg-fixed px-2  ">
+      <div className="flex   pt-2 pl-2  ">
         {/* <Navber /> */}
         <div className="font-bold pt-3">
          <Link to="/" ><FaArrowLeftLong className="flex" /></Link>
