@@ -48,9 +48,7 @@ function Hiro() {
 
                             {/* right bg url("/myp7.jpg") */}
                         <div className='flex items-center justify-center'>
-                            <div className={` bg-[url("/m y p 7.jpg")] h-72 md:h-96 md:w-96 w-72 bg-im rounded-full bg-no-repeat bg-center   bg-cover  `} >
-                            
-                             <h1 className="text-center"> img সিক্রেট করা হয়েছে </h1>
+                            <div className=sName={` pb-4 bg-[url("/m y p 7.jpg")] h-72 md:h-96 md:w-96 w-72 bg-im rounded-full bg-no-repeat bg-center   bg-coName={`  bg-[url("/m y p 7.jpg")] h-72 md:h-96 md:w-96 w-72 bg-im rounded-fusName="text-cat bg-center   bg-cov > </h1>
 							 	
                                  <p className="text-center">file is not found </p>
                            </div>
