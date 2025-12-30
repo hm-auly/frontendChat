@@ -16,20 +16,20 @@ function Hiro() {
                             </p>
 
                             <div className='flex gap-4 justify-center md:justify-start pb-4 '>
-                                <a href="https://www.facebook.com/m.aul.ulla.2024">
+                                <a href="https://www.  facebook.com/m.aul.ulla.2024">
                                     <button className='icons'><i class="fa-brands fa-facebook-f text-2xl text-cyan-500"></i></button>
                                 </a>
-                                <a href="https://www.instagram.com/auly_ullah?igsh=MTFocm13ZHBlOWQ4ag==">
+                                <a href="https://www.  instagram.com/auly_ullah?igsh=MTFocm13ZHBlOWQ4ag==">
                                     <button className='icons'><i class="fa-brands fa-instagram text-2xl text-cyan-500"></i></button>
                                 </a>
                                 <a href="https://www.youtube.com/@CodedByAuly">
                                     <button className='icons'><i class="fa-brands fa-youtube text-2xl text-cyan-500"></i></button>
                                 </a>
-                                <a href="https://www.linkedin.com/in/auly-ullah-244604352?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
+                                <a href="https://www.  linkedin.com/in/auly-ullah-244604352?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
                                     <button className='icons'><i class="fa-brands fa-linkedin-in text-2xl text-cyan-500"></i></button>
                                 </a>
 
-                               <a href="https://www.tiktok.com/@codedbyauly?_t=ZS-8vLC83UDfLs&_r=1">
+                               <a href="https://www.  tiktok.com/@codedbyauly?_t=ZS-8vLC83UDfLs&_r=1">
                                <button className='icons'><i class="fa-brands fa-tiktok text-2xl text-cyan-500"></i></button>
                                </a>
 
@@ -48,7 +48,7 @@ function Hiro() {
 
                             {/* right bg url("/myp7.jpg") */}
                         <div className='flex items-center justify-center'>
-                            <div className={` bg-[url("/myp7.jpg")] h-72 md:h-96 md:w-96 w-72 bg-im rounded-full bg-no-repeat bg-center   bg-cover  `} >
+                            <div className={` bg-[url("/m y p 7.jpg")] h-72 md:h-96 md:w-96 w-72 bg-im rounded-full bg-no-repeat bg-center   bg-cover  `} >
                             
                              
 
